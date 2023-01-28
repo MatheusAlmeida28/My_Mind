@@ -13,13 +13,26 @@
 </head>
 
 <body>
-    <div class="titulo">
+    <div class="center">
 		<h1 id="titulo">My Mind</h1>
 	</div>
+
+    <div class="center">
+        <button id="btn_emergencia" type="button" class="btn btn-danger" href="http://wa.me/34991025162"><strong>Emergência!</strong></button>
+    </div>
    
     <div class="container">
 
         <form action="{% url 'home' %}" method="POST">{% csrf_token %}
+
+            {% if messages %}
+                <br>
+                {% for message in messages %}
+                    <div class="alert {{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
             <br>
             <span>Nome:</span>
             <input type="text" class="form-control"  name="nome" placeholder="Nome...">
@@ -30,11 +43,18 @@
             <span>Acontecimento Positivo:</span>
             <textarea class="form-control" name="acontecimento_positivo" placeholder="Um acontecimento positivo..."></textarea>
             <br>
-            <span>Estado Mental:</span>
-            <textarea class="form-control" name="estado_mental" placeholder="Estado mental..."></textarea>
+            <select name="estado_mental" multiple class="form-select">
+                {%for i in estado%}
+                    <option value="{{i.0}}" >{{i.1}}</option>
+                {% endfor %} 
+            </select>
             <br>
-            <span>Alerta de Crise:</span>
-            <textarea class="form-control" name="alerta_crises" placeholder="Alerta de crises..."></textarea>
+            <select name="estado_mental" multiple class="form-select">
+                {%for i in alerta%}
+                    <option value="{{i.0}}" >{{i.1}}</option>
+                {% endfor %}
+            </select>
+            <br>
             <br>
             <span>Data do Acontecimento:</span>
             <textarea class="form-control" name="data_acontecimento" placeholder="Quando começou..."></textarea>
@@ -45,41 +65,28 @@
 
             <input type="submit" value="ENVIAR" class="btn-custom-primary">
         </form>
-        <hr>
-        <div class="container">
-            <!-- alteracao mauro visualizar resgistros -->
-            {% for registro in registros %}
-            
-            <span>Acontecimento Negativo:</span><br>
-            <td>
-                {{registro.acontecimento_negativo}}
-            </td>
-            <span>Nome:</span>
-            <td>
-                {{registro.acontecimento_positivo}}
-            </td>
-            <span>Nome:</span>
-            <td>
-                {{registro.estado_mental}}
-            </td>
-            <span>Nome:</span>
-            <td>
-                {{registro.alerta_crises}}
-            </td>
-            <span>Nome:</span>
-            <td>
-                {{registro.data_atual}}
-            </td>
-            <span>Nome:</span>
-            <td>
-                {{registro.data_acontecimento}}
-            </td>
-            <span>Nome:</span>
-            <td>
-                {{registro.data_superaçao}}
-            </td>
+        
+<div class="container">
+    <!-- alteracao mauro visualizar resgistros -->
+    {% for registro in registros %}
+    <hr>
+    <span><b>Acontecimento Negativo:</b> </span>{{registro.acontecimento_negativo}}<br> 
     
-            {% endfor %}
+    <span><b>Acontecimento Positivo:</b></span>{{registro.acontecimento_positivo}}<br>
+   
+    <span><b>Estado Mental: </b></span>{{registro.estado_mental}}<br>
+   
+    <span><b>Alerta Crise: </b></span>{{registro.alerta_crises}} <br>
+    
+    <span><b>Data Atual: </b></span> {{registro.data_atual}} <br>
+  
+    <span><b>Data Acontecimento: </b></span> {{registro.data_acontecimento}} <br>
+    
+    <span><b>Data Superação: </b></span> {{registro.data_superaçao}} <br>
+    
+    
+    {% endfor %}
+ 
     
         </div>
  
