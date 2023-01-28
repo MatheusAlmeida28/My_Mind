@@ -18,6 +18,33 @@
 	</div>
    
     <div class="container">
+        <!-- alteracao mauro visualizar resgistros -->
+        {% resgistro registro in resgistros %}
+        <td>
+            {{registro.acontecimento_negativo}}
+        </td>
+        <td>
+            {{registro.acontecimento_positivo}}
+        </td>
+        <td>
+            {{registro.estado_mental}}
+        </td>
+        <td>
+            {{registro.alerta_crises}}
+        </td>
+        <td>
+            {{registro.data_atual}}
+        </td>
+        <td>
+            {{registro.data_acontecimento}}
+        </td>
+        <td>
+            {{registro.data_superaçao}}
+        </td>
+
+
+
+
 		<h1 id="titulo">My Mind</h1>
 		<h1 id="titulo">My Mind</h1>
 		<h1 id="titulo">My Mind</h1>
