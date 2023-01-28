@@ -17,34 +17,33 @@
 		<h1 id="titulo">My Mind</h1>
 	</div>
    
-       <div class="container">
+    <div class="container">
 
         <form action="{% url 'home' %}" method="POST">{% csrf_token %}
             <br>
             <span>Nome:</span>
-            <input type="text" class="form-control"  name="nome" placeholder=" nome">
+            <input type="text" class="form-control"  name="nome" placeholder="Nome...">
             <br>
             <span>Acontecimento Negativo:</span>
-            <textarea class="form-control" name="acontecimento_negativo" placeholder="acontecimento_negativo"></textarea>
+            <textarea class="form-control" name="acontecimento_negativo" placeholder="Um acontecimento negativo..."></textarea>
             <br>
             <span>Acontecimento Positivo:</span>
-            <textarea class="form-control" name="acontecimento_positivo" placeholder="acontecimento_positivo"></textarea>
+            <textarea class="form-control" name="acontecimento_positivo" placeholder="Um acontecimento positivo..."></textarea>
             <br>
-            <span>estado_mental:</span>
-            <textarea class="form-control" name="estado_mental" placeholder="estado_mental"></textarea>
+            <span>Estado Mental:</span>
+            <textarea class="form-control" name="estado_mental" placeholder="Estado mental..."></textarea>
             <br>
-            <span>alerta_crises:</span>
-            <textarea class="form-control" name="alerta_crises" placeholder="alerta_crises"></textarea>
+            <span>Alerta de Crise:</span>
+            <textarea class="form-control" name="alerta_crises" placeholder="Alerta de crises..."></textarea>
             <br>
-            <span>data_acontecimento:</span>
-            <textarea class="form-control" name="data_acontecimento" placeholder="data_acontecimento"></textarea>
+            <span>Data do Acontecimento:</span>
+            <textarea class="form-control" name="data_acontecimento" placeholder="Quando começou..."></textarea>
             <br>
-            <span>data_superaçao:</span>
-            <textarea class="form-control" name="data_superaçao" placeholder="data_superaçao"></textarea>
+            <span>Data da Superação:</span>
+            <textarea class="form-control" name="data_superaçao" placeholder="Quando acabou..."></textarea>
             <br>
 
             <input type="submit" value="ENVIAR" class="btn-custom-primary">
-            
         </form>
         <hr>
         <div class="container">
