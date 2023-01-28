@@ -21,8 +21,8 @@ class Pessoa(models.Model):
     estado_mental =  models.CharField("Selecione o seu estado mental atual", max_length=2,choices=avaliacao_diaria)
     alerta_crises = models.CharField("Selecione o seu estado de crise", max_length=2,choices=alerta_crises)
     data_atual = models.DateTimeField(auto_now=True)
-    data_acontecimento = models.DateTimeField(auto_now=False)
-    data_superaçao = models.DateTimeField(auto_now=False)
+    data_acontecimento = models.CharField(max_length=100)
+    data_superaçao = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nome
