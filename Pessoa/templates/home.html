@@ -50,7 +50,36 @@
 		<h1 id="titulo">My Mind</h1>
 		<h1 id="titulo">My Mind</h1>
 		<h1 id="titulo">My Mind</h1>
+
 	</div>
+
+    <form action="{% url 'home' %}" method="POST">{% csrf_token %}
+        <br>
+        <span>Nome:<span>
+        <input type="text" class="form-control" name="nome" placeholder="Digite seu nome">
+        <br>
+        <span>acontecimento_negativo:<span>
+        <textarea class="form-control" name="acontecimento_negativo" placeholder="acontecimento_negativo"></textarea>
+        <br>
+        <span>acontecimento_positivo:<span>
+        <textarea class="form-control" name="acontecimento_positivo" placeholder="acontecimento_positivo"></textarea>
+        <br>
+        <span>estado_mental:<span>
+        <textarea class="form-control" name="estado_mental" placeholder="estado_mental"></textarea>
+        <br>
+        <span>alerta_crises:<span>
+        <textarea class="form-control" name="alerta_crises" placeholder="alerta_crises"></textarea>
+        <br>
+        <span>data_acontecimento:<span>
+        <textarea class="form-control" name="data_acontecimento" placeholder="data_acontecimento"></textarea>
+        <br>
+        <span>data_superaçao:<span>
+        <textarea class="form-control" name="data_superaçao" placeholder="data_superaçao"></textarea>
+        <br>
+
+        <input type="submit" value="ENVIAR" class="btn-custom-primary">
+        
+    </form>
 
     <div class='container'>
         
