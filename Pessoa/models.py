@@ -9,7 +9,6 @@ class Pessoa(models.Model):
         ('E', 'EXCELENTE'),
         }
 
-
     alerta_crises = {
         ('P', 'PANICO'),    
         ('A', 'ANSIEDADE'),    
