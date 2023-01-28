@@ -19,7 +19,10 @@
    
     <div class="container">
         <!-- alteracao mauro visualizar resgistros -->
-        {% resgistro registro in resgistros %}
+        {% for registro in registros %}
+        <td>
+            {{registro.nome}}
+        </td>
         <td>
             {{registro.acontecimento_negativo}}
         </td>
@@ -42,8 +45,7 @@
             {{registro.data_superaçao}}
         </td>
 
-
-
+        {% endfor %}
 
 		<h1 id="titulo">My Mind</h1>
 		<h1 id="titulo">My Mind</h1>
