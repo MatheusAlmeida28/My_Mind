@@ -18,9 +18,9 @@
 	</div>
 
     <div class="center">
-        <button id="btn_emergencia" type="button" class="btn btn-danger" href="http://wa.me/34991025162"><strong>Emergência!</strong></button>
+        <a target="_blank"class="btn btn-danger" href="http://wa.me/5531999856520" role="button">BOTAO DE EMERGENCIA </a>
     </div>
-   
+
     <div class="container">
 
         <form action="{% url 'home' %}" method="POST">{% csrf_token %}
@@ -74,9 +74,9 @@
     
     <span><b>Acontecimento Positivo:</b></span>{{registro.acontecimento_positivo}}<br>
    
-    <span><b>Estado Mental: </b></span>{{registro.estado_mental}}<br>
+    <span><b>Estado Mental: </b></span>{{registro.get_estado_mental_display}}<br>
    
-    <span><b>Alerta Crise: </b></span>{{registro.alerta_crises}} <br>
+    <span><b>Alerta Crise: </b></span>{{registro.get_alerta_crises_display}} <br>
     
     <span><b>Data Atual: </b></span> {{registro.data_atual}} <br>
   

@@ -12,7 +12,7 @@ def listar_monitoramento(request):
         
         print(alerta)
         return render(request,'home.html', {'registros': registros, 'estado': estado, 'alerta': alerta })
-        #  return render(request,'home.html', {'registros': registros, 'estado': estado, ': alerta })
+
     elif request.method == "POST":
 
         nome = request.POST.get('nome')
